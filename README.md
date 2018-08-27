@@ -6,7 +6,12 @@ This is a docker image for the command line tool **tower-cli** for Ansible Tower
 ## Usage
 
 ```
-docker run --rm pstauffer/ansible-tower-cli <options>
+# one shot
+docker run --rm -v /root/.tower_cli.cfg:/home/cli/.tower_cli.cfg:ro -it pstauffer/ansible-tower-cli <options>
+
+# with an alias
+alias tower-cli=“docker run --rm -v /root/.tower_cli.cfg:/home/cli/.tower_cli.cfg:ro -it pstauffer/ansible-tower-cli”
+tower-cli host list
 ```
 
 ## License
